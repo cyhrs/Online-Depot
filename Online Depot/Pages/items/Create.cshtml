@@ -1,0 +1,49 @@
+﻿@page
+@model Online_Depot.Pages.items.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>itemclass</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="itemclass.Title" class="control-label"></label>
+                <input asp-for="itemclass.Title" class="form-control" />
+                <span asp-validation-for="itemclass.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="itemclass.ReleaseDate" class="control-label"></label>
+                <input asp-for="itemclass.ReleaseDate" class="form-control" />
+                <span asp-validation-for="itemclass.ReleaseDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="itemclass.Genre" class="control-label"></label>
+                <input asp-for="itemclass.Genre" class="form-control" />
+                <span asp-validation-for="itemclass.Genre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="itemclass.Price" class="control-label"></label>
+                <input asp-for="itemclass.Price" class="form-control" />
+                <span asp-validation-for="itemclass.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
